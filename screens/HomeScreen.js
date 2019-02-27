@@ -1,27 +1,18 @@
 import React from 'react';
 import {
-  Image,
-  Platform,
-  ScrollView,
   StyleSheet,
   Text,
-  TouchableOpacity,
   View,
 } from 'react-native';
-import { WebBrowser } from 'expo';
 
-import { MonoText } from '../components/StyledText';
-import Ball from '../src/Ball';
+import Deck from '../src/Deck';
 
 export default class HomeScreen extends React.Component {
-  static navigationOptions = {
-    header: null,
-  };
 
   render() {
     return (
       <View style={styles.container}>
-        <Ball />
+        <Deck />
       </View>
     );
   
