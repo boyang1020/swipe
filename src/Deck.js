@@ -18,17 +18,26 @@ class Deck extends Component {
         this.state = { PanResponder, position };
     }
     renderCards() {
-        return this.props.data.map(item => {
+        return this.props.data.map((item, index) => {
+            if (index === 0) {
+                return (
+                    <Animated.View
+                        style={this.state.position.getLayout()}
+                        {...this.state.PanResponder.panHandlers}>
+                    >
+                        {this.props.renderCard(item)}
+                    </Animated.View>
+                );
+            }
+
             return this.props.renderCards(item);
         });
     }
     render() {
         return (
-            <Animated.View 
-            style={this.state.position.getLayout()}
-            {...this.state.PanResponder.panHandlers}>
+            <View>
                 {this.renderCards()}
-            </Animated.View>
+            </View>
         );
     }
 }
