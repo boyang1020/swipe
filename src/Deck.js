@@ -37,7 +37,13 @@ class Deck extends Component {
                 x: SCREEN_WIDTH, y: 0
             },
             duration: SWIPE_OUT_DURATION
-        }).start();
+        }).start(() => this.onSwipeComplete(direction));
+    }
+
+    onSwipeComplete(direction) {
+        const { onSwipeRight, onSwiprLeft } = this.props;
+
+        direction === 'right' ? onSwipeRight() : onSwiprLeft();
     }
 
     resetPosition() {
