@@ -7,9 +7,10 @@ const SWIPE_OUT_DURATION = 250;
 
 class Deck extends Component {
     static defaultProps = {
-        onSwipeRight: () => {}
+        onSwipeRight: () => {},
+        onSwipeLeft: () => {}
     }
-    
+
     constructor(props) {
         super(props);
 
